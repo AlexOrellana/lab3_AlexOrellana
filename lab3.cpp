@@ -90,19 +90,19 @@ void eje2(){
  	
 	//ataque
 	for(int i=0;i<4;i++){
-		random = rand()%115+82;
+		random = rand()%29+85;
 		matriz[i][0]=random;
 	}
 	
 	//defensa
 	for(int i=0;i<4;i++){
-		random = rand()%75+50;
+		random = rand()%24+50;
 		matriz[i][1]=random;
 	}
 	
 	//velocidad
 	for(int i=0;i<4;i++){
-		random = rand()%200+150;
+		random = rand()%49+150;
 		matriz[i][2]=random;
 	}
 
@@ -116,22 +116,38 @@ void eje2(){
 	int player2[3];
 
 	//player 1
-	random = rand()%3+0;
+	random = rand()%4+0;
 	player1[0]=matriz[random][0];
 	
-	random = rand()%3+0;
+	random = rand()%4+0;
 	player1[0]=matriz[random][1];
 	
-	random = rand()%3+0;	
+	random = rand()%4+0;	
 	player1[0]=matriz[random][2];
 
 	//player 2
-	random = rand()%3+0;
+	random = rand()%4+0;
 	player2[0]=matriz[random][0];
 	
-	random = rand()%3+0;
+	random = rand()%4+0;
 	player2[0]=matriz[random][1];
 	
-	random = rand()%3+0;	
+	random = rand()%4+0;	
 	player2[0]=matriz[random][2];	
+
+	int resultado_P1,resultado_P2;
+	resultado_P1 = player1[0]-player2[1];
+	resultado_P2 = player2[0]-player1[1];
+
+	if(resultado_P1>resultado_P2){
+	cout << "jugador 1, gano con " << resultado_P1-resultado_P2 << " puntos de diferencia, no gano por velocidad" << endl; 
+	}else if(resultado_P1<resultado_P2){
+	cout << "jugador 2, gano con " << resultado_P2-resultado_P1 << " puntos de diferencia, no gano por velocidad" << endl;
+	}else if(resultado_P1==resultado_P2){
+		if(player1[2]>player2[2]){
+			cout << "jugador 1, gano con " << resultado_P1-resultado_P2 << " puntos de diferencia, gano por velocidad" << endl;	
+		}else if(player1[2]<player2[2]){
+			cout << "jugador 2, gano con " << resultado_P2-resultado_P1 << " puntos de diferencia, gano por velocidad" << endl;
+		}
+	}
 }
