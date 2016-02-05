@@ -7,6 +7,7 @@ using std::cin;
 using std::endl;
 
 void eje1();
+void eje2();
 
 int main(int argc,char* argv[]){
 
@@ -18,7 +19,7 @@ cin >> res_menu;
 if(res_menu == 1){
 	eje1();
 }else if(res_menu == 2){
-
+	eje2();
 }else{
 	cout << "Opcion no valida" << endl;
 }
@@ -31,7 +32,7 @@ void eje1(){
 	int score[10]={50,50,50,50,50,50,50,50,50,50};
 
 	do{
-
+		con=0;
 		int mayor=500,menor=-500;
 		srand(time(NULL));
 		int random = rand()%mayor+menor;
@@ -56,7 +57,7 @@ void eje1(){
 				score[i+1]=score[i];
 			}else
 			if(i<8){
-				for(int j=i;j<10;i++){
+				for(int j=i;j<10;j++){
 					score[j+1]=score[j];
 				}	
 			}
@@ -79,4 +80,37 @@ void eje1(){
 
 	}while(resp == 1);
 
+}
+
+void eje2(){
+
+int row=4,col=3;
+int matriz[row][col];
+ 	
+	//ataque
+	for(int i=0;i<4;i++){
+		srand(time(NULL));
+		int random = rand()%115+82;
+		matriz[i][0]=random;
+	}
+	
+	//defensa
+	for(int i=0;i<4;i++){
+		srand(time(NULL));
+		int random = rand()%75+50;
+		matriz[i][1]=random;
+	}
+	
+	//velocidad
+	for(int i=0;i<4;i++){
+		srand(time(NULL));
+		int random = rand()%200+150;
+		matriz[i][2]=random;
+	}
+
+	cout << "Ataque          " << "Defensa         " << "Velocidad       " << endl;
+	cout << matriz[0][0] << "      " << matriz[0][1] << "      " << matriz[0][2] << endl;
+	cout << matriz[1][0] << "      " << matriz[1][1] << "      " << matriz[1][2] << endl;
+	cout << matriz[2][0] << "      " << matriz[2][1] << "      " << matriz[2][2] << endl;
+	cout << matriz[3][0] << "      " << matriz[3][1] << "      " << matriz[3][2] << endl;	
 }
