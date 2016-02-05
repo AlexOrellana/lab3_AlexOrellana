@@ -84,33 +84,54 @@ void eje1(){
 
 void eje2(){
 
-int row=4,col=3;
-int matriz[row][col];
+	srand(time(NULL));
+	int row=4,col=3,random;
+	int matriz[row][col];
  	
 	//ataque
 	for(int i=0;i<4;i++){
-		srand(time(NULL));
-		int random = rand()%115+82;
+		random = rand()%115+82;
 		matriz[i][0]=random;
 	}
 	
 	//defensa
 	for(int i=0;i<4;i++){
-		srand(time(NULL));
-		int random = rand()%75+50;
+		random = rand()%75+50;
 		matriz[i][1]=random;
 	}
 	
 	//velocidad
 	for(int i=0;i<4;i++){
-		srand(time(NULL));
-		int random = rand()%200+150;
+		random = rand()%200+150;
 		matriz[i][2]=random;
 	}
 
 	cout << "Ataque          " << "Defensa         " << "Velocidad       " << endl;
-	cout << matriz[0][0] << "      " << matriz[0][1] << "      " << matriz[0][2] << endl;
-	cout << matriz[1][0] << "      " << matriz[1][1] << "      " << matriz[1][2] << endl;
-	cout << matriz[2][0] << "      " << matriz[2][1] << "      " << matriz[2][2] << endl;
-	cout << matriz[3][0] << "      " << matriz[3][1] << "      " << matriz[3][2] << endl;	
+	cout << matriz[0][0] << "             " << matriz[0][1] << "              " << matriz[0][2] 		<< endl;
+	cout << matriz[1][0] << "             " << matriz[1][1] << "              " << matriz[1][2] 		<< endl;
+	cout << matriz[2][0] << "             " << matriz[2][1] << "              " << matriz[2][2] 		<< endl;
+	cout << matriz[3][0] << "             " << matriz[3][1] << "              " << matriz[3][2] 		<< endl;
+
+	int player1[3];
+	int player2[3];
+
+	//player 1
+	random = rand()%3+0;
+	player1[0]=matriz[random][0];
+	
+	random = rand()%3+0;
+	player1[0]=matriz[random][1];
+	
+	random = rand()%3+0;	
+	player1[0]=matriz[random][2];
+
+	//player 2
+	random = rand()%3+0;
+	player2[0]=matriz[random][0];
+	
+	random = rand()%3+0;
+	player2[0]=matriz[random][1];
+	
+	random = rand()%3+0;	
+	player2[0]=matriz[random][2];	
 }
